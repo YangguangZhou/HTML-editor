@@ -2,7 +2,7 @@ const edit = {
     doc: `<!DOCTYPE html>\n<html lang="zh-cn">\n\n<head>\n    <meta charset="utf-8">\n    <title>Document</title>\n</head>\n\n<body>\n    \n</body>\n\n</html>`,
     path: "https://cdn.jsdelivr.net/npm/ace-builds@1.4.12/src-min-noconflict/",
     theme: "ace/theme/clouds",
-    inject: `<script>\n// Code injected by tiy.xecades.xyz\nconsole.output = (type, msg) => parent.window.handleConsole(type, msg);\nconsole.log    = msg => console.output("log", msg);\nconsole.warn   = msg => console.output("warn", msg);\nconsole.error  = msg => console.output("error", msg);\nconsole.debug  = msg => console.output("log", msg);\nconsole.info   = msg => console.output("info", msg);\n\nwindow.onerror = (msg, url, row, col) => {\n    if (url == "") console.error(\`\${msg}  in line \${row}:\${col}\`);\n    else           console.error(\`in \${url}<br>\${msg}  in line \${row}:\${col}\`);\n    return true;\n}\n\nfunction __handleCommand(cmd) {\n    eval(\`try{console.output("return",\${cmd})}catch(e){console.error(e)}\`);\n}\n</script>`,
+    inject: `<script>\n// Code injected by HTML-editor.xecades.xyz\nconsole.output = (type, msg) => parent.window.handleConsole(type, msg);\nconsole.log    = msg => console.output("log", msg);\nconsole.warn   = msg => console.output("warn", msg);\nconsole.error  = msg => console.output("error", msg);\nconsole.debug  = msg => console.output("log", msg);\nconsole.info   = msg => console.output("info", msg);\n\nwindow.onerror = (msg, url, row, col) => {\n    if (url == "") console.error(\`\${msg}  in line \${row}:\${col}\`);\n    else           console.error(\`in \${url}<br>\${msg}  in line \${row}:\${col}\`);\n    return true;\n}\n\nfunction __handleCommand(cmd) {\n    eval(\`try{console.output("return",\${cmd})}catch(e){console.error(e)}\`);\n}\n</script>`,
     cmdinsert: `<div class="item command"><span class="icon">❯❯</span><input id="commandLine" class="text" onkeydown="commandLineKeydown(this)"></input></div>`
 };
 
@@ -19,7 +19,7 @@ const $set    = (key, val)       => localStorage.setItem(key, val) || val;
 const $del    = (key)            => localStorage.removeItem(key) || null;
 const $var    = (key)            => decodeURI(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURI(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
 const isCtrl  = ()               => window.event.ctrlKey || window.event.metaKey;
-const title   = (title)          => Title(title + " | TIY");
+const title   = (title)          => Title(title + " | HTML-editor");
 const count   = (str, skipspace) => (str) ? (skipspace ? (str.match(/[^\s]/g) || "").length : str.length) : 0;
 const getFile = (file, call)     => Ajax(`files/${file}.html`, call);
 const setDoc  = (doc)            => editor.session.setValue(doc) || true;
@@ -157,24 +157,22 @@ function loaded() {
     if (isMsgView) return;
     console.clear();
     console.log(`
-    // ┌─Xecades TIY────────────────────────────────────────────┐
-    // │                                                        │
-    // │                TIY HTML Online Launcher                │
-    // │                                                        │
-    // ├────────────────────────────────────────────────────────┤
-    // │                                                        │
-    // │ Github                  https://github.com/Xecades/TIY │
-    // │ Website                           https://xecades.xyz/ │
-    // │ hexo-tag-tiy   https://github.com/Xecades/hexo-tag-tiy │
-    // │                                                        │
-    // ├────────────────────────────────────────────────────────┤
-    // │                                                        │
-    // │ MIT LICENSE                                            │
-    // │ Copyright © 2020 - 2021 Jerry Zhou                     │
-    // │ TIY is abbreviation of Try It Yourself.                │
-    // │                                                        │
-    // └────────────────────────────────────────────────────────┘
-    HTML-editor
+    ┌─Jerry Zhou  HTML-editor────────────────────────────────┐
+    │                                                        │
+    │                HTML-editor HTML Online Launcher        │
+    │                                                        │
+    ├────────────────────────────────────────────────────────┤
+    │                                                        │
+    │ Home                         https://jzhome.vercel.app │
+    │ Blog                         https://jzblog.vercel.app │
+    │ GitHub                https://github.com/YangguangZhou │
+    │                                                        │
+    ├────────────────────────────────────────────────────────┤
+    │                                                        │
+    │ MIT LICENSE                                            │
+    │ Copyright © 2020 - 2021 Jerry Zhou                     │                │
+    │                                                        │
+    └────────────────────────────────────────────────────────┘
     `);
 }
 
