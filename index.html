@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="Jerry Zhou,HTML-editor,HTML,CSS,JS,代码,HTML编辑器,HTML代码编辑器">
+    <meta name="description" content="Jerry Zhou 「HTML-editor」 HTML 代码编辑器">
+    <meta name="author" content="Jerry Zhou">
+    <title>Jerry Zhou | HTML-editor</title>
+    <link type="favicon" rel="shortcut icon" href="/img/favicon.png" />
+    <script src="assets/js/HTML.js"></script>
+    <script src="assets/js/construct.js"></script>
+    <script>
+        window.onmessage = (e) => {
+            window.msg = e;
+        };
+    </script>
+</head>
+
+<body>
+    <div id="loading">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+    <noscript>
+        <style>
+            #noscript {
+                display: block;
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                text-align: center;
+                line-height: 100vh;
+                user-select: none;
+                font-size: 1.5rem;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #777;
+            }
+        </style>
+        <div id="noscript">抱歉，HTML-editor 需要 script 权限才能运行.</div>
+    </noscript>
+</body>
+
+</html>
