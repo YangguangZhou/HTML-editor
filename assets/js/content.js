@@ -29,7 +29,7 @@ document.body.innerHTML += `<div class="left fl">
     </div>
     <div class="item">
         <span class="description">字体大小</span>
-        <input id="fontSize" type="number" min="11" max="30" step="1" value="17">
+        <input id="fontSize" type="number" min="11" max="30" step="1" value="20">
     </div>
     <p>HTML-editor 代码运行工具</p>
     <p>版权所有 © 2020 - 2021 <a href="https://jzhome.vercel.app/" target="_blank" rel="noopener noreferrer">Jerry Zhou</a>
