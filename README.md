@@ -1,6 +1,6 @@
 # HTML-editor
 
-# [网址](https://html.jerryz.com.cn/)
+# [html.jerryz.com.cn](https://html.jerryz.com.cn/)
 
 HTML-editor 代码运行工具
 
